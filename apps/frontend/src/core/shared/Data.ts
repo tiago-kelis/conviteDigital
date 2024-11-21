@@ -33,6 +33,6 @@ export default class Data {
     }
 }
 
-console.log(Data.formatar(new Date));
+
 
 
