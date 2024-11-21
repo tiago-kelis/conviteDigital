@@ -24,4 +24,28 @@ body {
   .container {
     @apply mx-auto max-w-7xl px-4;
   }
+
+  .btn {
+    @apply flex justify-center items-center;
+    @apply gap-2 rounded-md px-9 h-9;
+    @apply text-sm font-semibold;    
+  }
+
+  .btn.verde {
+    @apply bg-teal-800 text-white;
+  } 
+
+  .btn.verde:hover {
+    @apply bg-teal-900;
+  }
+
+  .btn.vermelho {
+    @apply bg-red-700;
+  }
+
+  .btn.vermelho:hover {
+    @apply bg-red-800
+  }
+    
+  
 }
