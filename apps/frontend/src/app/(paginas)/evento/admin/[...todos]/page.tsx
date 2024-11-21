@@ -3,6 +3,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
+import DashboardEvento from "@/components/evento/DashBoardEvento";
+import FomSenhaEvento from "@/components/evento/FormSenhaEvento";
 import { Convidado, Evento, eventos } from "@/core";
 import { use, useEffect, useState } from "react";
 
@@ -34,11 +36,11 @@ export default function PaginaAdminEvento(props: any) {
         carregarEvento();
     }, [id, senha]);
 
-    return evento ? (
-        <div className="flex flex-col gap-2">
-            <span>{evento.nome}</span>
-           
+    return (
+        <div className="flex flex-col items-center">
+            {evento ? <DashboardEvento evento={evento} /> : <FomSenhaEvento />}
         </div>
-    ) : null;
+    );
+
    
 }
