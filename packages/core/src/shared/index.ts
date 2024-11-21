@@ -1,4 +1,4 @@
-import Id from "./id";
+import Id from "./Id";
 import Aliais from "./Aliais";
 import Senha from "./Senha";
 import Data from "./Data";

@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { parse } from "querystring";
-import { moveMessagePortToContext } from "worker_threads";
 
 export default class Data {
     static formatar(data: Date): string {

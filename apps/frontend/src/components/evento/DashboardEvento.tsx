@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Convidado, Evento} from "@/core";
+import { Convidado, Evento} from "core";
 import InformacoesEventos from "./InformacoesEvento";
 import AcessarViaQrCode from "./AcessarViaQrCode";
 import Estatistica from "../shared/Estatistica";

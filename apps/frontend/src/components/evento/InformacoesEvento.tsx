@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Evento } from "@/core"
+import { Evento } from "core"
 import Informacao from "../shared/Informacao"
 
 export interface InformacoesEventosProps {
