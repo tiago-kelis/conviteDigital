@@ -1,0 +1,8 @@
+# Ignorar a pasta node_modules
+node_modules/
+
+# Ignorar outros arquivos e pastas desnecessários
+.DS_Store
+dist/
+coverage/
+.env
