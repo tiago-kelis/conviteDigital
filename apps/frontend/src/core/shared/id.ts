@@ -11,4 +11,8 @@ export default class Id {
     }
 }
 
-console.log(Id.novo());
+for(let i = 0; i < 100; i++) {
+    console.log(Id.novo());
+}
+
+
