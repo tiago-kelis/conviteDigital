@@ -1,2 +1,11 @@
 
 GET http://localhost:4000/eventos
+
+###
+GET http://localhost:4000/eventos/evento-fullstack
+
+###
+GET  http://localhost:4000/eventos/evento-js-avancado
+
+###
+Get http://localhost:4000/eventos/validar/evento-js-avancado
