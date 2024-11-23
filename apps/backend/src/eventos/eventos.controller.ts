@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 
 
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { complementarEvento, Convidado, Data, Evento, eventos, Id } from 'core';
+import { Body, Controller, Get, HttpException, Param, Post } from '@nestjs/common';
+import { complementarConvidado, complementarEvento, Convidado, Data, Evento, Id } from 'core';
 import { EventoPrisma } from './evento.prisma';
 
 
@@ -12,14 +12,13 @@ export class EventosController {
     constructor(readonly repo: EventoPrisma) {}
 
     async salvarEvento(@Body() evento: Evento) {
-        const eventoCadastrado = eventos.find((ev) => ev.alias === evento.alias);
+        const eventoCadastrado = await this.repo.buscarPorAlias(evento.alias);
         if(eventoCadastrado && eventoCadastrado.id !== evento.id) {
-            throw new Error("Já existe um evento com esse alias!");
+            throw new HttpException("Já existe um evento com esse alias!", 400);
         }
 
         const eventoCompleto = complementarEvento(this.desiserialize(evento));
-        eventos.push(eventoCompleto);
-        return this.serealizar(eventoCompleto);
+       await this.repo.salvar(eventoCompleto);
     }
 
     @Post(":alias/convidado")
@@ -30,8 +29,9 @@ export class EventosController {
             throw new Error("Evento não encontrado!");
         }
 
-        // evento.convidados.push(convidado);        
-        // return this.serealizar(evento);
+        const convidadoCompleto = complementarConvidado(convidado);
+        await this.repo.salvarConvidado(evento, convidadoCompleto);     
+
     }
 
     @Post("acessar")
@@ -39,11 +39,11 @@ export class EventosController {
         const evento = await this.repo.buscarPorId(dados.id);
 
         if(!evento) {
-            throw new Error("Evento não encontrado!")
+            throw new HttpException("Evento não encontrado!", 400);
         }
 
         if(evento.senha !== dados.senha) {
-            throw new Error("A Senha não corresponde ao evento!")
+            throw new HttpException("A Senha não corresponde ao evento!", 400);
         }
 
         return this.serealizar(evento);
