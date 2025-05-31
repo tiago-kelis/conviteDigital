@@ -15,10 +15,9 @@ export default function FormEvento() {
   const permiteProximoPasso: boolean[] = [
     !!evento.alias && !!evento.nome && aliasValido,
     !!evento.data && !!evento.local,
-    !!evento.descricao && (evento.publicoEsperado ?? 0) > 0,
-    // &&
-    // !!evento.imagem &&
-    // !!evento.imagemBackground,
+    !!evento.descricao && (evento.publicoEsperado ?? 0) > 0,    
+    !!evento.imagem &&
+    !!evento.imagemBackground,
   ];
 
   return (

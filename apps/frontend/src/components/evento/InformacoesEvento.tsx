@@ -4,7 +4,9 @@ import Informacao from "../shared/Informacao"
 
 export interface InformacoesEventosProps {
     evento: Evento
+    esconderNome?: boolean
     classname?: string
+
 }
 
 export default function InformacoesEventos(props: InformacoesEventosProps) {
