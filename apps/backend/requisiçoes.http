@@ -2,10 +2,10 @@
 GET http://localhost:4000/eventos
 
 ###
-GET http://localhost:4000/eventos/evento-fullstack
+GET http://localhost:4000/eventos/validar/evento-fullstack/j3ruhrbqwg-0m50h57wingr-dt9dmwhunr5
 
 ###
 GET  http://localhost:4000/eventos/evento-js-avancado
 
 ###
-Get http://localhost:4000/eventos/validar/evento-js-avancado
+Get http://localhost:4000/eventos/validar/evento-js-avancado/dad57828-587d-41d6-8a1f-38a6e4aaf90a
