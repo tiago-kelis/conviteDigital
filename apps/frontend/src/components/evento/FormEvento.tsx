@@ -1,7 +1,7 @@
 import useEvento from "@/data/hooks/useEvento";
 import Passos from "../shared/Passos";
 import CampoEntrada from "../shared/CampoEntrada";
-import { Alias, Data } from "core";
+import {Data,  Aliais } from "core";
 
 export default function FormEvento() {
   const { evento, aliasValido, alterarEvento, salvarEvento } = useEvento();
@@ -33,11 +33,11 @@ export default function FormEvento() {
           <CampoEntrada
             label="Identificador"
             descricao="Identificador único e exclusivo para o evento (usado na URL)"
-            value={Alias.formatar(evento.alias ?? "")}
+            value={Aliais.formatar(evento.alias ?? "")}
             onChange={(e) =>
               alterarEvento({
                 ...evento,
-                alias: Alias.formatar(e.target.value),
+                alias: Aliais.formatar(e.target.value),
               })
             }
             erro={aliasValido ? "" : "Alias já foi utilizado em outro evento"}
